@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      Align(
+                      const Align(
                         child: Column(
                           children: [
                             Icon(
@@ -90,16 +90,16 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       InkWell(
                           onTap: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => Dashboard(),
+                                builder: (context) => const Dashboard(),
                               ),
                             );
                           },
-                          child: Align(
+                          child: const Align(
                               child: Icon(Icons.all_inbox_rounded, size: 35))),
                     ],
                   ),
@@ -116,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 15,
                                     fontWeight: FontWeight.normal),
                               )),
-                          Align(
+                          const Align(
                             alignment: Alignment.topCenter,
                             child: Text(
                               'Earth',
