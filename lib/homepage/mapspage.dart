@@ -96,7 +96,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
   List<Stone> _buildStonesList(ClimateData _data) {
     final data = [
       {
-        "color": Colors.red,
+        "color": const Color.fromARGB(255, 0, 128, 202),
         "width": 2,
         "height": 2,
         "name": "Mean Temperature",
@@ -104,7 +104,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['temperature_2m_mean']
       },
       {
-        "color": Colors.blue,
+        "color": const Color.fromARGB(255, 0, 102, 164),
         "width": 1,
         "height": 1,
         "name": "Radiation Sum",
@@ -112,7 +112,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['shortwave_radiation_sum']
       },
       {
-        "color": Colors.amber,
+        "color": const Color.fromARGB(255, 0, 102, 164),
         "width": 3,
         "height": 1,
         "name": "Mean Humidity",
@@ -120,7 +120,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['relative_humidity_2m_mean']
       },
       {
-        "color": Colors.greenAccent,
+        "color": const Color.fromARGB(255, 0, 160, 237),
         "width": 1,
         "height": 1,
         "name": "Dewpoint",
@@ -128,7 +128,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['dewpoint_2m_mean']
       },
       {
-        "color": Colors.green,
+        "color": const Color.fromARGB(255, 123, 209, 254),
         "width": 2,
         "height": 1,
         "name": "Precipitation Sum",
@@ -136,7 +136,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['precipitation_sum']
       },
       {
-        "color": Colors.lightBlue,
+        "color": const Color.fromARGB(255, 123, 209, 254),
         "width": 1,
         "height": 1,
         "name": "Rainsum",
@@ -144,7 +144,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['rain_sum']
       },
       {
-        "color": Colors.greenAccent,
+        "color": const Color.fromARGB(255, 0, 102, 164),
         "width": 1,
         "height": 1,
         "name": "Sea Level Pressure",
@@ -152,7 +152,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
         "units": _data.dailyUnits['pressure_msl_mean']
       },
       {
-        "color": Colors.lightBlue,
+        "color": const Color.fromARGB(255, 123, 209, 254),
         "width": 1,
         "height": 1,
         "name": "Soil Moisture",
@@ -161,7 +161,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
       },
       // {"color": Colors.purple, "width": 2, "height": 1},
       {
-        "color": Colors.yellow,
+        "color": const Color.fromARGB(255, 123, 209, 254),
         "width": 1,
         "height": 1,
         "name": "Evapotranspiration",
@@ -265,7 +265,9 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
                             child: Text(
                               value,
                               style: TextStyle(
-                                  color: Colors.white, fontSize: fontSize),
+                                  fontFamily: "Ubuntu",
+                                  color: Colors.white,
+                                  fontSize: fontSize),
                             ),
                           ),
                         ),
@@ -278,6 +280,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
                                 child: Text(
                                   unit,
                                   style: TextStyle(
+                                      fontFamily: "Ubuntu",
                                       color: Colors.white,
                                       fontSize: fontSize * 0.2),
                                 ),
@@ -375,10 +378,68 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Climate Data'),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 223, 241, 255), // Start color
+              Color.fromARGB(255, 123, 209, 254), // End color
+            ],
+          ),
+        ),
+        child: SafeArea(
+          minimum: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                      icon: const Icon(Icons.arrow_back),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      padding: const EdgeInsets.only(left: 70),
+                      child: const Text(
+                        'Climate Data',
+                        style: TextStyle(
+                          fontFamily: "Ubuntu",
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                          color: Color.fromARGB(255, 10, 71, 112),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 223, 241, 255), // Start color
+                        Color.fromARGB(255, 123, 209, 254), // End color
+                      ],
+                    ),
+                  ),
+                  child: buildWallLayout(),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      body: buildWallLayout(),
     );
   }
 }
