@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'missions.dart';
 import 'watercycle.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -27,7 +29,7 @@ class CardData {
 }
 
 class Dashboard extends StatefulWidget {
-  const Dashboard();
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -98,7 +100,7 @@ class _DashboardState extends State<Dashboard> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => WaterCyclePage(),
+                                builder: (context) => const WaterCyclePage(),
                               ),
                             );
                           } else {

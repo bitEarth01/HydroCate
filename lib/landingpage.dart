@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'homepage/homepage.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage();
+  const LandingPage({Key? key}) : super(key: key);
 
   @override
   State<LandingPage> createState() => _LandingPageState();
@@ -75,7 +75,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ElevatedButton(
@@ -96,7 +96,7 @@ class _LandingPageState extends State<LandingPage> {
                       style: GoogleFonts.inter(
                           fontSize: 26,
                           fontWeight: FontWeight.w900,
-                          color: Color.fromARGB(255, 88, 146, 255)),
+                          color: const Color.fromARGB(255, 88, 146, 255)),
                     ),
                   ),
                 ),

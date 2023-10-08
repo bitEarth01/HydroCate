@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp();
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // Define the initial route
       routes: {
         '/': (context) =>
-            OpeningPage(), // Define the route for the opening page
-        '/landing': (context) => LandingPage(),
+            const OpeningPage(), // Define the route for the opening page
+        '/landing': (context) => const LandingPage(),
         '/onboarding': (context) =>
-            Onboarding(), // Define the route for the landing page
+            const Onboarding(), // Define the route for the landing page
       },
     );
   }

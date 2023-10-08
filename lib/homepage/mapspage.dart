@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, depend_on_referenced_packages, non_constant_identifier_names, avoid_print, no_leading_underscores_for_local_identifiers
 
 import 'dart:convert';
 import 'dart:math';
@@ -21,9 +21,9 @@ class MapsPage extends StatefulWidget {
 
 class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
   late AnimationController _controller;
-  bool _reversed = false;
-  Axis _direction = Axis.vertical;
-  int _nbLayers = 3;
+  final bool _reversed = false;
+  final Axis _direction = Axis.vertical;
+  final int _nbLayers = 3;
   late List<Stone> _stones;
   ClimateData _climateData = ClimateData(
     dailyUnits: {},
@@ -32,7 +32,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
 
   Future<void> fetchData(String Lat, String Long) async {
     final url = Uri.parse(
-        'https://climate-api.open-meteo.com/v1/climate?latitude=${Lat}&longitude=${Long}&start_date=2023-10-08&end_date=2023-10-08&models=EC_Earth3P_HR&daily=temperature_2m_mean,shortwave_radiation_sum,relative_humidity_2m_mean,dewpoint_2m_mean,precipitation_sum,rain_sum,pressure_msl_mean,soil_moisture_0_to_10cm_mean,et0_fao_evapotranspiration_sum');
+        'https://climate-api.open-meteo.com/v1/climate?latitude=$Lat&longitude=$Long&start_date=2023-10-08&end_date=2023-10-08&models=EC_Earth3P_HR&daily=temperature_2m_mean,shortwave_radiation_sum,relative_humidity_2m_mean,dewpoint_2m_mean,precipitation_sum,rain_sum,pressure_msl_mean,soil_moisture_0_to_10cm_mean,et0_fao_evapotranspiration_sum');
 
     try {
       final response = await http.get(url);

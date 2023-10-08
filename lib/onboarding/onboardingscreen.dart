@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:visual_water/config/sizeconfig.dart';
-import 'package:visual_water/landingpage.dart';
 import 'package:visual_water/onboarding/onboardingcontent.dart';
 
 import '../homepage/homepage.dart';
 
 class Onboarding extends StatefulWidget {
-  const Onboarding();
+  const Onboarding({Key? key}) : super(key: key);
 
   @override
   State<Onboarding> createState() => _OnboardingState();
@@ -81,7 +80,7 @@ class _OnboardingState extends State<Onboarding> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: "Ubuntu",
-                            color: Color.fromARGB(255, 15, 74, 107),
+                            color: const Color.fromARGB(255, 15, 74, 107),
                             fontWeight: FontWeight.w600,
                             fontSize: (width <= 550) ? 30 : 35,
                           ),
@@ -91,7 +90,7 @@ class _OnboardingState extends State<Onboarding> {
                           contents[i].desc,
                           style: TextStyle(
                             fontFamily: "Ubuntu",
-                            color: Color.fromARGB(255, 36, 32, 32),
+                            color: const Color.fromARGB(255, 36, 32, 32),
                             fontWeight: FontWeight.w400,
                             fontSize: (width <= 550) ? 17 : 25,
                           ),
@@ -129,7 +128,8 @@ class _OnboardingState extends State<Onboarding> {
                               );
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color.fromARGB(255, 7, 132, 194),
+                              backgroundColor:
+                                  const Color.fromARGB(255, 7, 132, 194),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),

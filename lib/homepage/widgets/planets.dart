@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cube/flutter_cube.dart';
 
 class Planet extends StatefulWidget {
-  Planet({Key? key, required this.interative}) : super(key: key);
+  const Planet({Key? key, required this.interative}) : super(key: key);
   final bool interative;
   @override
   State<Planet> createState() => _PlanetState();
@@ -20,7 +20,7 @@ class _PlanetState extends State<Planet> with SingleTickerProviderStateMixin {
     super.initState();
 
     _controller = AnimationController(
-        duration: Duration(milliseconds: 30000), vsync: this)
+        duration: const Duration(milliseconds: 30000), vsync: this)
       ..addListener(() {
         if (!widget.interative) {
           if (_earth != null) {
@@ -62,11 +62,11 @@ class _PlanetState extends State<Planet> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.2,
       width: MediaQuery.of(context).size.height * 0.2,
       child: TweenAnimationBuilder<double>(
-          duration: Duration(seconds: 0),
+          duration: const Duration(seconds: 0),
           curve: Curves.easeIn,
           tween: Tween(begin: 0, end: 1),
           builder: (context, animation, child) {

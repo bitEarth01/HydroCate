@@ -1,10 +1,9 @@
-import 'dart:convert';
+// ignore_for_file: non_constant_identifier_names, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:visual_water/homepage/modals/mapdata.dart';
 import 'package:visual_water/nasadatapage/dashboard.dart';
 
 import 'mapspage.dart';
@@ -12,7 +11,7 @@ import 'widgets/infogrid.dart';
 import 'widgets/planets.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage();
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -150,12 +149,12 @@ class _HomePageState extends State<HomePage> {
                           });
                         },
                         child: !isInteracting
-                            ? Planet(
-                                key: const Key('Planet1'),
+                            ? const Planet(
+                                key: Key('Planet1'),
                                 interative: false,
                               )
-                            : Planet(
-                                key: const Key('Planet2'),
+                            : const Planet(
+                                key: Key('Planet2'),
                                 interative: true,
                               ),
                       ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:visual_water/config/sizeconfig.dart';
 
 class OpeningPage extends StatelessWidget {
-  const OpeningPage();
+  const OpeningPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class OpeningPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/openingwater.jpeg"),
                 fit: BoxFit.cover,

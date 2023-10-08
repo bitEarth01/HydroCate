@@ -11,10 +11,12 @@ class Mission {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -61,18 +63,20 @@ class MissionsPage extends StatelessWidget {
         ])
   ];
 
+  MissionsPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Missions'),
+        title: const Text('Missions'),
       ),
       body: ListView.builder(
         itemCount: missions.length,
         itemBuilder: (context, index) {
           final mission = missions[index];
           return Card(
-            margin: EdgeInsets.all(16.0),
+            margin: const EdgeInsets.all(16.0),
             child: ListTile(
               title: Text(mission.name),
               onTap: () {
@@ -94,7 +98,7 @@ class MissionsPage extends StatelessWidget {
 class MissionDetailsPage extends StatelessWidget {
   final Mission mission;
 
-  MissionDetailsPage({required this.mission});
+  const MissionDetailsPage({Key? key, required this.mission}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +119,7 @@ class MissionDetailsPage extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Image.asset(
                       image,
                       fit: BoxFit.cover,
@@ -128,7 +132,7 @@ class MissionDetailsPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 mission.description,
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: "Ubuntu",
                   fontSize: 18.0,
                   fontWeight: FontWeight.w400,
