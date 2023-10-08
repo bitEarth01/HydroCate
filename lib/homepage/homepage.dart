@@ -99,8 +99,8 @@ class _HomePageState extends State<HomePage> {
                               ),
                             );
                           },
-                          child:
-                              Align(child: Icon(Icons.book_online, size: 30))),
+                          child: Align(
+                              child: Icon(Icons.all_inbox_rounded, size: 35))),
                     ],
                   ),
                   Row(
