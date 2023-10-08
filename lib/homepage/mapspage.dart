@@ -378,7 +378,9 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
       appBar: AppBar(
         title: const Text('Climate Data'),
       ),
-      body: buildWallLayout(),
+      body: _stones.isNotEmpty
+          ? buildWallLayout()
+          : Center(child: CircularProgressIndicator()),
     );
   }
 }
