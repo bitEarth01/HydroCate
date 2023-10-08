@@ -41,6 +41,7 @@ dependencies:
   lottie: ^2.6.0
   flutter_cube: ^0.1.1
   flutter_map: ^5.0.0
+  flutter_wall_layout: ^2.1.1
 
 dev_dependencies:
   flutter_test:

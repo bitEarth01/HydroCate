@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:http/http.dart' as http;
 import 'package:visual_water/homepage/modals/mapdata.dart';
 import 'package:visual_water/nasadatapage/dashboard.dart';
 
+import 'mapspage.dart';
 import 'widgets/infogrid.dart';
 import 'widgets/planets.dart';
 
@@ -50,47 +50,6 @@ class _HomePageState extends State<HomePage> {
     'inches since 1993',
     'zettaJoules since 1955'
   ];
-  ClimateData _climateData = ClimateData(
-    dailyUnits: {},
-    dailyData: {},
-  );
-
-  Future<void> fetchData(String Lat, String Long) async {
-    final url = Uri.parse(
-        'https://climate-api.open-meteo.com/v1/climate?latitude=${Lat}&longitude=${Long}&start_date=2023-10-08&end_date=2023-10-08&models=CMCC_CM2_VHR4,FGOALS_f3_H,HiRAM_SIT_HR,MRI_AGCM3_2_S,EC_Earth3P_HR,MPI_ESM1_2_XR,NICAM16_8S&daily=temperature_2m_mean,shortwave_radiation_sum,relative_humidity_2m_mean,dewpoint_2m_mean,precipitation_sum,rain_sum,pressure_msl_mean,soil_moisture_0_to_10cm_mean,et0_fao_evapotranspiration_sum');
-
-    try {
-      final response = await http.get(url);
-      print('started');
-      if (response.statusCode == 200) {
-        print('object');
-        print(response.body);
-        final decodedData = json.decode(response.body);
-        final climateData = ClimateData.fromJson(decodedData);
-        print('1');
-        // Format and extract the data you need here
-        print(climateData);
-        setState(() {
-          _climateData = climateData;
-        });
-      } else {
-        setState(() {
-          _climateData = ClimateData(
-            dailyUnits: {},
-            dailyData: {},
-          );
-        });
-      }
-    } catch (e) {
-      print(e);
-      setState(() {
-        _climateData = ClimateData(
-          dailyUnits: {},
-          dailyData: {},
-        );
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -278,8 +237,14 @@ class _HomePageState extends State<HomePage> {
                         zoom: 0.0,
                         onTap: (_, latlng) {
                           print(latlng);
-                          fetchData(latlng.latitude.toString(),
-                              latlng.longitude.toString());
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MapsPage(
+                                        latLng: latlng,
+                                      )));
+                          // fetchData(latlng.latitude.toString(),
+                          //     latlng.longitude.toString());
                         },
                       ),
                       children: [
