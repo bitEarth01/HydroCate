@@ -6,6 +6,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:http/http.dart' as http;
 import 'package:visual_water/homepage/modals/mapdata.dart';
+import 'package:visual_water/nasadatapage/dashboard.dart';
 
 import 'widgets/infogrid.dart';
 import 'widgets/planets.dart';
@@ -100,9 +101,8 @@ class _HomePageState extends State<HomePage> {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               colors: [
-                Color.fromRGBO(94, 201, 250, 1),
-                Color.fromRGBO(195, 236, 255, 1),
-                Color.fromRGBO(195, 236, 255, 0),
+                Color.fromRGBO(35, 179, 251, 1),
+                Color.fromRGBO(223, 241, 255, 1),
               ],
             ),
           ),
@@ -113,6 +113,38 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Row(
+                    children: [
+                      Align(
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.backpack,
+                              size: 30,
+                            ),
+                            /*SizedBox(height: 5),
+                            Text(
+                              'Learn More',
+                              style: TextStyle(
+                                fontSize: 10,
+                              ),
+                            ),*/
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Dashboard(),
+                              ),
+                            );
+                          },
+                          child:
+                              Align(child: Icon(Icons.book_online, size: 30))),
+                    ],
+                  ),
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
@@ -122,21 +154,25 @@ class _HomePageState extends State<HomePage> {
                               child: Text(
                                 'Weather And Water',
                                 style: GoogleFonts.inter(
-                                    fontSize: 10,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.normal),
                               )),
                           Align(
                             alignment: Alignment.topCenter,
                             child: Text(
                               'Earth',
-                              style: GoogleFonts.inter(
-                                  fontSize: 24, fontWeight: FontWeight.w800),
+                              style: TextStyle(
+                                  fontFamily: "Ubuntu",
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w800,
+                                  color: Color.fromARGB(255, 7, 45, 74)),
                             ),
-                          )
+                          ),
                         ],
                       )
                     ],
                   ),
+
                   const SizedBox(
                     height: 10,
                   ),
@@ -232,7 +268,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.blue,
                         borderRadius: BorderRadius.circular(25)),
                     height: 300,
                     child: Flexible(
