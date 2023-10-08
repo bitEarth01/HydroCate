@@ -378,68 +378,76 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 223, 241, 255), // Start color
-              Color.fromARGB(255, 123, 209, 254), // End color
-            ],
-          ),
-        ),
-        child: SafeArea(
-          minimum: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: IconButton(
-                      icon: const Icon(Icons.arrow_back),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 70),
-                      child: const Text(
-                        'Climate Data',
-                        style: TextStyle(
-                          fontFamily: "Ubuntu",
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromARGB(255, 10, 71, 112),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color.fromARGB(255, 223, 241, 255), // Start color
-                        Color.fromARGB(255, 123, 209, 254), // End color
-                      ],
-                    ),
-                  ),
-                  child: buildWallLayout(),
+      body: _stones.isNotEmpty
+          ? Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color.fromARGB(255, 223, 241, 255), // Start color
+                    Color.fromARGB(255, 123, 209, 254), // End color
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
+              child: SafeArea(
+                minimum: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: IconButton(
+                            icon: const Icon(Icons.arrow_back),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 70),
+                            child: const Text(
+                              'Climate Data',
+                              style: TextStyle(
+                                fontFamily: "Ubuntu",
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                                color: Color.fromARGB(255, 10, 71, 112),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Color.fromARGB(255, 223, 241, 255), // Start color
+                              Color.fromARGB(255, 123, 209, 254), // End color
+                            ],
+                          ),
+                        ),
+                        child: buildWallLayout(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : Center(child: CircularProgressIndicator()),
+// <<<<<<< HEAD
+// =======
+//       body: _stones.isNotEmpty
+//           ? buildWallLayout()
+//           : Center(child: CircularProgressIndicator()),
+// >>>>>>> 75c75dda6b85dd706e779499c57d6ea6bfcc8457
     );
   }
 }

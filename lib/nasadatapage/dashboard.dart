@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'missions.dart';
+import 'watercycle.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Dashboard(),
     );
   }
@@ -48,31 +51,37 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 185, 228, 254),
+      backgroundColor: const Color.fromARGB(255, 185, 228, 254),
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.only(top: 16, left: 16),
-              alignment: Alignment.center,
-              child: Text(
-                'Infographics',
-                style: TextStyle(
-                  fontFamily: "Ubuntu",
-                  fontSize: 25,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 10, 71, 112),
+            Row(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
-              ),
-            ),
-            Container(
-              alignment: Alignment.topLeft,
-              child: IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 70),
+                    child: const Text(
+                      'Infographics',
+                      style: TextStyle(
+                        fontFamily: "Ubuntu",
+                        fontSize: 25,
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromARGB(255, 10, 71, 112),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             Expanded(
               child: ListView.builder(
@@ -83,61 +92,94 @@ class _DashboardState extends State<Dashboard> {
                   final cardData = cardDataList[i];
                   return Column(
                     children: [
-                      Card(
-                        color: const Color.fromARGB(255, 0, 128, 202),
-                        elevation: 10,
-                        child: Row(
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: GestureDetector(
-                                onTap: () {},
-                                child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromARGB(255, 0, 128, 202),
-                                    image: DecorationImage(
-                                      image: AssetImage(cardData.imagePath),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(75.0)),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          blurRadius: 7.0, color: Colors.black)
-                                    ],
-                                  ),
-                                ),
+                      GestureDetector(
+                        onTap: () {
+                          if (cardData.heading == 'Water Cycle') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => WaterCyclePage(),
                               ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    cardData.heading,
-                                    style: TextStyle(
-                                      fontFamily: "Ubuntu",
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    cardData.description,
-                                    style: TextStyle(
-                                      fontFamily: "Ubuntu",
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                            );
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MissionsPage(),
+                              ),
+                            );
+                          }
+                        },
+                        child: Card(
+                          // color: const Color.fromARGB(255, 0, 128, 202),
+                          elevation: 10,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color.fromARGB(255, 35, 179, 251),
+                                  Color.fromARGB(255, 5, 87, 135)
                                 ],
                               ),
                             ),
-                          ],
+                            child: Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                          255, 0, 128, 202),
+                                      image: DecorationImage(
+                                        image: AssetImage(cardData.imagePath),
+                                        fit: BoxFit.cover,
+                                      ),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(75.0)),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                            blurRadius: 7.0,
+                                            color: Colors.black)
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        cardData.heading,
+                                        style: const TextStyle(
+                                          fontFamily: "Ubuntu",
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                      Text(
+                                        cardData.description,
+                                        style: const TextStyle(
+                                          fontFamily: "Ubuntu",
+                                          fontSize: 14,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                       // Adjust the height as needed
