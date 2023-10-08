@@ -380,7 +380,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
     return Scaffold(
       body: _stones.isNotEmpty
           ? Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -391,7 +391,8 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
                 ),
               ),
               child: SafeArea(
-                minimum: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                minimum:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 child: Column(
                   children: [
                     Row(
@@ -424,7 +425,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
                     ),
                     Expanded(
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -441,7 +442,7 @@ class _MapsPageState extends State<MapsPage> with TickerProviderStateMixin {
                 ),
               ),
             )
-          : Center(child: CircularProgressIndicator()),
+          : const Center(child: CircularProgressIndicator()),
 // <<<<<<< HEAD
 // =======
 //       body: _stones.isNotEmpty
