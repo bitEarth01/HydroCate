@@ -43,7 +43,7 @@ class OpeningPage extends StatelessWidget {
                 ),
                 SizedBox(height: SizeConfig.blockV! * 3),
                 Text(
-                  "Water is the driving force of all nature.",
+                  "//manoj think of a good sentence here",
                   style: TextStyle(
                     fontFamily: "Ubuntu",
                     fontWeight: FontWeight.w400,

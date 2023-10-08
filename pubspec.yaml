@@ -42,8 +42,6 @@ dependencies:
   flutter_map: ^5.0.0
   flutter_wall_layout: ^2.1.1
   carousel_slider: ^4.2.1
-  flutter_animate_on_scroll: ^0.0.2
-  flutter_gif: ^0.0.4
 
 dev_dependencies:
   flutter_test:
@@ -66,8 +64,6 @@ flutter:
     - assets/earth/
     - assets/homepage/
     - assets/images/
-    - assets/watercycle/
-    - assets/gifs/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
