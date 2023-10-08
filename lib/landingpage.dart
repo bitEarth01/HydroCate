@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'homepage/homepage.dart';
 
 class LandingPage extends StatefulWidget {
-  const LandingPage({super.key});
+  const LandingPage();
 
   @override
   State<LandingPage> createState() => _LandingPageState();

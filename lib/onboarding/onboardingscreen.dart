@@ -3,8 +3,10 @@ import 'package:visual_water/config/sizeconfig.dart';
 import 'package:visual_water/landingpage.dart';
 import 'package:visual_water/onboarding/onboardingcontent.dart';
 
+import '../homepage/homepage.dart';
+
 class Onboarding extends StatefulWidget {
-  const Onboarding({super.key});
+  const Onboarding();
 
   @override
   State<Onboarding> createState() => _OnboardingState();
@@ -123,12 +125,9 @@ class _OnboardingState extends State<Onboarding> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => LandingPage()),
+                                    builder: (context) => const HomePage()),
                               );
                             },
-                            child: const Text("DIVE IN",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 217, 229, 237))),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromARGB(255, 7, 132, 194),
                               shape: RoundedRectangleBorder(
@@ -144,6 +143,9 @@ class _OnboardingState extends State<Onboarding> {
                                   fontWeight: FontWeight.w700,
                                   fontSize: (width <= 550) ? 13 : 17),
                             ),
+                            child: const Text("DIVE IN",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 217, 229, 237))),
                           ),
                         )
                       : Padding(
@@ -155,17 +157,17 @@ class _OnboardingState extends State<Onboarding> {
                                 onPressed: () {
                                   _controller.jumpToPage(2);
                                 },
-                                child: const Text(
-                                  "SKIP",
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 15, 74, 107)),
-                                ),
                                 style: TextButton.styleFrom(
                                   textStyle: TextStyle(
                                     fontFamily: "Ubuntu",
                                     fontWeight: FontWeight.w600,
                                     fontSize: (width <= 550) ? 13 : 17,
                                   ),
+                                ),
+                                child: const Text(
+                                  "SKIP",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 15, 74, 107)),
                                 ),
                               ),
                               ElevatedButton(
@@ -175,12 +177,6 @@ class _OnboardingState extends State<Onboarding> {
                                     curve: Curves.easeIn,
                                   );
                                 },
-                                child: const Text(
-                                  "NEXT",
-                                  style: TextStyle(
-                                      color:
-                                          Color.fromARGB(255, 193, 216, 230)),
-                                ),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
                                       const Color.fromARGB(255, 7, 132, 194),
@@ -196,6 +192,12 @@ class _OnboardingState extends State<Onboarding> {
                                       fontFamily: "Ubuntu",
                                       fontWeight: FontWeight.w500,
                                       fontSize: (width <= 550) ? 13 : 17),
+                                ),
+                                child: const Text(
+                                  "NEXT",
+                                  style: TextStyle(
+                                      color:
+                                          Color.fromARGB(255, 193, 216, 230)),
                                 ),
                               ),
                             ],

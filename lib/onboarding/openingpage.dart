@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:visual_water/config/sizeconfig.dart';
 
 class OpeningPage extends StatelessWidget {
-  const OpeningPage({super.key});
+  const OpeningPage();
 
   @override
   Widget build(BuildContext context) {

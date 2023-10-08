@@ -1,15 +1,13 @@
 // ignore_for_file: unused_local_variable, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class InfoGraphGrid extends StatefulWidget {
   String name;
   String unit;
   String value;
-  InfoGraphGrid(
-      {super.key, required this.name, required this.unit, required this.value});
+  InfoGraphGrid({required this.name, required this.unit, required this.value});
 
   @override
   State<InfoGraphGrid> createState() => _InfoGraphGridState();
@@ -98,8 +96,7 @@ class InfoDoubleGrid extends StatefulWidget {
   String unit1;
   String value1;
   InfoDoubleGrid(
-      {super.key,
-      required this.name,
+      {required this.name,
       required this.unit,
       required this.value,
       required this.name1,
