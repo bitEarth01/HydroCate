@@ -26,34 +26,34 @@ Ultimately, our project strives to empower students and learners to become infor
 ### References
 
 Information sources
-https://climate.nasa.gov/
-https://science.nasa.gov/press-release/
-https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-climate-change-grades-k-4/
-https://www.nasa.gov/learning-resources/for-kids-and-students/what-are-climate-and-climate-change-grades-5-8/
-https://swot.jpl.nasa.gov/science/oceanography/
-https://swot.jpl.nasa.gov/applications/overview/
-https://swot.jpl.nasa.gov/science/hydrology/
-https://gpm.nasa.gov/missions/GPM
-https://smap.jpl.nasa.gov/mission/why-it-matters/#droughts
-https://smap.jpl.nasa.gov/mission/why-it-matters/#floods
-https://smap.jpl.nasa.gov/mission/why-it-matters/#cycles
-https://grace.jpl.nasa.gov/applications/overview/#ice
-https://grace.jpl.nasa.gov/mission/grace-fo/
-https://grace.jpl.nasa.gov/applications/overview/#ocean
+- https://climate.nasa.gov/
+- https://science.nasa.gov/press-release/
+- https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-climate-change-grades-k-4/
+- https://www.nasa.gov/learning-resources/for-kids-and-students/what-are-climate-and-climate-change-grades-5-8/
+- https://swot.jpl.nasa.gov/science/oceanography/
+- https://swot.jpl.nasa.gov/applications/overview/
+- https://swot.jpl.nasa.gov/science/hydrology/
+- https://gpm.nasa.gov/missions/GPM
+- https://smap.jpl.nasa.gov/mission/why-it-matters/#droughts
+- https://smap.jpl.nasa.gov/mission/why-it-matters/#floods
+- https://smap.jpl.nasa.gov/mission/why-it-matters/#cycles
+- https://grace.jpl.nasa.gov/applications/overview/#ice
+- https://grace.jpl.nasa.gov/mission/grace-fo/
+- https://grace.jpl.nasa.gov/applications/overview/#ocean
 
 Graphs
-https://climate.nasa.gov/vital-signs/carbon-dioxide/
-https://climate.nasa.gov/vital-signs/global-temperature/
-https://climate.nasa.gov/vital-signs/methane/
-https://climate.nasa.gov/vital-signs/ocean-warming/
-https://climate.nasa.gov/vital-signs/ice-sheets/
-https://climate.nasa.gov/vital-signs/sea-level/
-https://climate.nasa.gov/vital-signs/arctic-sea-ice/
+- https://climate.nasa.gov/vital-signs/carbon-dioxide/
+- https://climate.nasa.gov/vital-signs/global-temperature/
+- https://climate.nasa.gov/vital-signs/methane/
+- https://climate.nasa.gov/vital-signs/ocean-warming/
+- https://climate.nasa.gov/vital-signs/ice-sheets/
+- https://climate.nasa.gov/vital-signs/sea-level/
+- https://climate.nasa.gov/vital-signs/arctic-sea-ice/
 
 
 Images
 
-https://svs.gsfc.nasa.gov/4990
-https://www.usgs.gov/media/images/fire-coral-bleaching
-https://svs.gsfc.nasa.gov/4964
-https://svs.gsfc.nasa.gov/5036
+- https://svs.gsfc.nasa.gov/4990
+- https://www.usgs.gov/media/images/fire-coral-bleaching
+- https://svs.gsfc.nasa.gov/4964
+- https://svs.gsfc.nasa.gov/5036
