@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'homepage/homepage.dart';
+
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
@@ -77,7 +79,12 @@ class _LandingPageState extends State<LandingPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePage()));
+                },
                 child: SizedBox(
                   height: height * 0.06,
                   width: width * 0.8,
