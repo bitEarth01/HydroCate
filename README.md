@@ -1,6 +1,9 @@
 # HydroCate
 This project is made for Nasa Space App Challange 2023 for the task-"Everything Starts with Water"
 
+### Project - Report
+- [🔗 Report](https://docs.google.com/document/d/1UhsOdcVj1iQVRDsdcQ0f7LB_4LtIVR7WAEDx86Pxnj8/edit?usp=sharing)
+
 ### High-Level Project Summary
 
 Our educational app utilizes NASA's mission data to explore the complex interplay between the water cycle and climate change. It's designed to cater to students of all ages, providing interactive content that illustrates how climate change factors influence the water cycle. By presenting information in an engaging and user-friendly manner, the app equips students with the knowledge and tools needed to comprehend these crucial environmental processes. Users gain a deep understanding of the Earth's climate system and the vital role played by the water cycle.This App was developed using Flutter Framework. This application is a cross-platform application.
@@ -57,3 +60,13 @@ Images
 - https://www.usgs.gov/media/images/fire-coral-bleaching
 - https://svs.gsfc.nasa.gov/4964
 - https://svs.gsfc.nasa.gov/5036
+
+Outside References
+- https://flutter.dev
+- https://open-meteo.com/en/docs/climate-api
+- https://pub.dev/packages/flutter_map
+- https://pub.dev/packages/latlng
+- https://nextjs.org
+- https://vercel.com/
+- https://spline.design
+  
