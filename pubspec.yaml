@@ -37,12 +37,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
   animated_text_kit: ^4.2.2
-  lottie: ^2.6.0
+  lottie: ^3.1.2
   flutter_cube: ^0.1.1
-  flutter_map: ^5.0.0
+  flutter_map: ^7.0.2
   flutter_wall_layout: ^2.1.1
-  carousel_slider: ^4.2.1
-  flutter_animate_on_scroll: ^0.0.2
+  carousel_slider: ^5.0.0
+  flutter_animate_on_scroll: ^0.1.1
   flutter_gif: ^0.0.4
   latlong2: ^0.9.0
 
@@ -55,7 +55,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

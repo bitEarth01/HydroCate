@@ -232,8 +232,8 @@ class _HomePageState extends State<HomePage> {
                     child: Flexible(
                         child: FlutterMap(
                       options: MapOptions(
-                        center: const LatLng(20.5937, 78.9629),
-                        zoom: 4,
+                        initialCenter: const LatLng(20.5937, 78.9629),
+                        initialZoom: 4,
                         onTap: (_, latlng) {
                           print(latlng);
                           Navigator.push(
